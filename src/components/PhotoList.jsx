@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PhotoListEntry from './PhotoLIstEntry';
+import PhotoListEntry from './PhotoListEntry';
 
 var PhotoList = (props) => (
 
@@ -7,7 +7,7 @@ var PhotoList = (props) => (
         <div className="PhotoList-header">
             {
                 props.picList.map((item) => {
-                    return <PhotoListEntry pics={item} />
+                    return <PhotoListEntry pic={item} cb={props.cb}/>
                 })
             }
 

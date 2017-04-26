@@ -4,21 +4,36 @@ import '../styles/App.css';
 import Photo from './Photo.jsx';
 import PhotoList from './PhotoList';
 import mockData from '../configs/mockData';
+import PhotoUpdateBar from './PhotoUpdateBar'
 
 
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log(mockData);
 
     this.state = {
       currentPic : mockData[0],
-      picList : mockData
+      picList : mockData,
+      currentRating : mockData[0].rating
     }
-    console.log(mockData[0]);
+
+    this.onPhotoClicked = this.onPhotoClicked.bind(this);
+    this.onRatingClicked = this.onRatingClicked.bind(this);
   }
 
+  onPhotoClicked (clickedPicData) {
+    this.setState ({
+      currentPic : clickedPicData,
+      currentRating : clickedPicData.rating
+    })
+  };
 
+  onRatingClicked (e) {
+    var id = e.target.value;
+    this.setState ({
+      currentRating : id
+    })
+  };
 
   render() {
     return (
@@ -28,12 +43,17 @@ class App extends Component {
           <h2>Welcome sto React</h2>
         </div>
 
+        <div className="PhotoUpdateBar-position">
+          <PhotoUpdateBar />
+        </div>
+
+
         <div className="Photo-position">
-          <Photo pic={this.state.currentPic} />
+          <Photo pic={this.state.currentPic} rating={this.state.currentRating} onRatingClicked={this.onRatingClicked}/>
         </div>
 
         <div className="PhotoList-position">
-          <PhotoList picList={this.state.picList}/>
+          <PhotoList picList={this.state.picList} cb={this.onPhotoClicked}/>
         </div>
 
       </div>

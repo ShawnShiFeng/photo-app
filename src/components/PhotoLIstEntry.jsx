@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 
 var PhotoListEntry = (props) => (
-    <div className="PhotoListEntry">
+    <div className="PhotoListEntry" onClick={()=>props.cb(props.pic)}>
         <p className="PhotoListEntry-text">
-            {props.pics.title}
+            {props.pic.title}
         </p>
     </div>
 );

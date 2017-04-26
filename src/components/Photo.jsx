@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RatingBar from './RatingBar';
+import DropDownMenu from './DropDownMenu';
 
 var Photo = (props) => (
     <div className="Photo">
@@ -8,10 +9,15 @@ var Photo = (props) => (
         </div>
 
         <div className="Photo-title">
-            <p>{props.pic.title}</p>
+            <p>{props.pic.title} </p>
         </div>
+
         <div className="RatingBar-position">
-          <RatingBar rating={props.pic.rating}/>
+          <RatingBar rating={props.rating}/>
+        </div>
+
+        <div className="DropDownMenu-position">
+            <DropDownMenu onRatingClicked={props.onRatingClicked}/>
         </div>
     </div>
 );

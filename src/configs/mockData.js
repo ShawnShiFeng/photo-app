@@ -10,12 +10,12 @@ var mockData = [
     rating: 2
 },
 {
-    title: 'no name',
+    title: 'grumpy cat',
     url: 'http://wallpaper-gallery.net/images/cat-pictures/cat-pictures-6.jpg',
     rating: 3
 },
 {
-    title: 'angry cat',
+    title: 'beautiful cat',
     url: 'https://s-media-cache-ak0.pinimg.com/originals/c8/71/b7/c871b746ee48e9836c2e771ffdb381f3.jpg',
     rating: 5
 },
